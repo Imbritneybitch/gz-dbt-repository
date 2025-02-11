@@ -1,0 +1,24 @@
+# schema.yml
+
+version: 2
+#You can now access your sources with {{source(’raw’, ‘sales’)}} instead of{{source(’gz_raw_data’, ‘raw_gz_sales’)}}
+
+sources: 
+  - name: raw
+    schema : gz_raw_data
+    tables:
+
+      - name: sales
+        identifier: raw_gz_sales
+        #description :
+        #columns :
+
+      - name: product
+        identifier: raw_gz_product
+        #description :
+        #columns :
+
+      - name: ship
+        identifier: raw_gz_ship
+        #description :
+        #columns :

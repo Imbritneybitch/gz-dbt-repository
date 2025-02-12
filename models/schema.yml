@@ -3,11 +3,10 @@
 version: 2
 #You can now access your sources with {{source(’raw’, ‘sales’)}} instead of{{source(’gz_raw_data’, ‘raw_gz_sales’)}}
 
-sources: 
+sources:
   - name: raw
     schema: gz_raw_data
     tables:
-
       - name: sales
         identifier: raw_gz_sales
         description: sales of Greenweez / we have on row per product_id found in each orders_id
@@ -15,27 +14,27 @@ sources:
           - name: date_date
             description: date of purchase
           - name: primary_key
-            description : created as orders_id and products_id were not unique values
+            description: created as orders_id and products_id were not unique values
           - name: orders_id
             description: not a primary key
           - name: product_id
-            description : not a primary key
+            description: not a primary key
           - name: revenue
-            description : total revenue of the purchase
-          - name : quantity
-            description : number of sold products
+            description: total revenue of the purchase
+          - name: quantity
+            description: number of sold products
 
       - name: product
         identifier: raw_gz_product
         description: every products which are liste by Greenweez
         columns:
           - name: products_id
-            description : one unique ID per product. Primary key's table
+            description: one unique ID per product. Primary key's table
             tests:
               - unique
-          - name : purchase_price
-            description : one price per product (FLOAT64 type)
-              
+          - name: purchase_price
+            description: one price per product (FLOAT64 type)
+
       - name: ship
         identifier: raw_gz_ship
         description: every shippings which are sent from Greenweez
@@ -45,7 +44,7 @@ sources:
             tests:
               - unique
           - name: shipping_fee
-            description: per order. gain of money for GZ. Sum due from the customer. 
+            description: per order. gain of money for GZ. Sum due from the customer.
           - name: logcost
             description: total sum of logcosts per order
           - name: ship_cost
